@@ -1,0 +1,25 @@
+h1 Listing tests
+
+table.table.table-hover
+  thead
+    tr
+      th Title
+      th Time
+      th Created at
+      th
+      th
+      th
+
+  tbody
+    - @tests.each do |test|
+      tr
+        td = test.title
+        td = test.time
+        td = test.created_at
+        td = link_to 'Show', test
+        td = link_to 'Edit', edit_test_path(test)
+        td = link_to 'Destroy', test, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Test', new_test_path , class: 'btn btn-danger'
